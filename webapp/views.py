@@ -22,9 +22,11 @@ class TaskUpdateView(UpdateView):
 
 class TaskDeleteView(DeleteView):
     model = Task
+    template_name = 'delete_task.html'
     success_url = reverse_lazy('index')
 
 class TaskDetailView(DetailView):
     model = Task
+    form_class = TaskForm
     template_name = 'detail_task.html'
     success_url = reverse_lazy('index')
